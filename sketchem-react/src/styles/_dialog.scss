@@ -1,0 +1,15 @@
+.dialog_window {
+    height: 90%;
+    width: 80%;
+    max-width: 85% !important;
+    max-height: 90% !important;
+    min-width: 50em !important;
+    min-height: 50em !important;
+}
+
+.dialog_content {
+    // overflow: hidden;
+    overflow: auto;
+    padding: 1em;
+}
+    

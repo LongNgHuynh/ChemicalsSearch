@@ -1,0 +1,143 @@
+@use "material_colors" as c;
+
+$toolbar-min-size: 80%;
+$toolbar-max-size: 96%;
+
+.periodic_table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+    // display: table;
+    color: #252525;
+    background-color: #fff;
+
+    tr {
+    }
+
+    td {
+        padding: 0;
+        min-height: 8em;
+        height: "auto";
+    }
+
+    th {
+        color: rgba(c.$gray-700, .9);
+        background-color: #fafafa;
+        font-size: 1em;
+        font-weight: 400;        
+    }
+
+    th[scope="col"] {
+        height: 1em;
+    }
+
+    th[scope="row"] {
+        width: auto;
+    }
+}
+
+.periodic_table_row {
+    // display: table-row;
+}
+
+.periodic_table_cell {
+    // display: table-cell;
+    // padding: 0.1em;
+}
+
+.periodic_table_cell_button {
+    // color: rgb(6, 118, 135)
+    width: 100%;
+    height: 100%;
+    min-width: 0.5em;
+    // padding: 0.1em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    // border-radius: 0.1em !important;
+    // color:#252525;
+    // background-color: #c0c1c1 !important;
+    // border-style: none !important;
+    // min-width: 6em;
+    // min-height: 5em;
+}
+
+.periodic_table_number {
+    text-align: left;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.periodic_table_symbol {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.periodic_table_name {
+    text-align: center;
+    font-size: 0.7em;
+}
+
+$btnText: #ffffff;
+
+$btnBorderColor: #0f0f0f10;
+$border-radius: 0em;
+
+// @mixin button-variant(
+//   $background,
+//   $border,
+//   $color: color-contrast($background),
+// }
+
+.unclickable_div{
+    pointer-events: none;
+}
+
+@mixin periodic_table_category_base($baseColor) {
+    @include button-variant($baseColor, $btnBorderColor, $btnText);
+    @include border-radius($border-radius, 0)
+}
+
+.periodic_table_category_diatomic_nonmetal {
+    @include periodic_table_category_base(c.$green-500);
+}
+
+.periodic_table_category_unknown {
+    @include periodic_table_category_base(c.$gray-500);
+}
+
+.periodic_table_category_noble_gas {
+    @include periodic_table_category_base(c.$light-blue-400);
+}
+
+.periodic_table_category_alkali_metal {
+    @include periodic_table_category_base(c.$red-400);
+}
+
+.periodic_table_category_alkaline_earth_metal {
+    @include periodic_table_category_base(#dfb566);
+}
+
+.periodic_table_category_metalloid {
+    @include periodic_table_category_base(c.$amber-300);
+}
+
+.periodic_table_category_polyatomic_nonmetal {
+    @include periodic_table_category_base(#868760);
+}
+
+.periodic_table_category_post-transition_metal {
+    @include periodic_table_category_base(c.$blue-gray-400);
+}
+
+.periodic_table_category_transition_metal {
+    @include periodic_table_category_base(#df6c80);
+}
+
+.periodic_table_category_lanthanide {
+    @include periodic_table_category_base(c.$deep-purple-300);
+}
+
+.periodic_table_category_actinide {
+    // @include periodic_table_category_base(#ba43cf);
+    @include periodic_table_category_base(c.$purple-500);
+}

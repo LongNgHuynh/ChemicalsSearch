@@ -1,0 +1,52 @@
+@use "material_colors"as c;
+
+@mixin text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    // make unselectable
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    paint-order: stroke;
+    // line-height: 1px !important;
+
+}
+
+.atom_label_text {
+    @include text;
+    // stroke: #00000094;
+    // stroke-width: 0.05em;
+    // stroke-linecap: round;
+    // stroke-linejoin: round;
+}
+
+.atom_label_hydrogen_text {
+    @include text;
+    font-size: smaller;
+    // alignment-baseline: central;
+    baseline-shift: sub;
+}
+
+.atom_label_charge_text {
+    @include text;
+    font-size: smaller;
+    baseline-shift: super;
+    // alignment-baseline: central;
+}
+
+.atom_label_valence_error_line{
+    stroke: c.$pink-500;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.atom_label_valence_error_rect{
+    stroke: c.$pink-500;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
